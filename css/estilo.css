@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cabecalho {
+    display: flex; /* torna os itens dentro dessa classe, como flexbox */
+    justify-content: space-between; /* joga o conteúdo para o extremo */
+    align-items: center; /* alinha os itens no centro vertical */
+    flex-wrap: wrap; /* faz com que os itens se organizem direito de acordo com a resolução da tela que está reproduzindo a página */
+    background-color: black;
+}
