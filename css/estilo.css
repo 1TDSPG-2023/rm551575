@@ -11,3 +11,9 @@
     flex-wrap: wrap; /* faz com que os itens se organizem direito de acordo com a resolução da tela que está reproduzindo a página */
     background-color: black;
 }
+
+.cabecalho img{
+    width: 30%; /* redimensionamento da largura */
+    max-width: 30%; /* evita que a imagem não ultrapasse 30% da tela */
+    display: block; /* define o elemento como bloco e ocupa toda a largura disponível */
+}
