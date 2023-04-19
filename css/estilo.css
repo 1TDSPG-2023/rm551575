@@ -7,7 +7,7 @@
 .cabecalho {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* alinha os itens no centro vertical */
+    align-items: center;
     flex-wrap: wrap;
     background-color: black;
 }
@@ -39,4 +39,22 @@
 .cabecalho a:hover {
     background-color: #fff;
     color: black;
+}
+
+.conteudo {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 80vw;
+    margin: 0 auto;
+}
+
+.conteudo div img {
+    max-width: 100%;
+    display: block;
+}
+
+.conteudo div {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 300px;
 }
