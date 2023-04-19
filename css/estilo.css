@@ -5,22 +5,22 @@
 }
 
 .cabecalho {
-    display: flex; /* torna os itens dentro dessa classe, como flexbox */
-    justify-content: space-between; /* joga o conteúdo para o extremo */
+    display: flex;
+    justify-content: space-between;
     align-items: center; /* alinha os itens no centro vertical */
-    flex-wrap: wrap; /* faz com que os itens se organizem direito de acordo com a resolução da tela que está reproduzindo a página */
+    flex-wrap: wrap;
     background-color: black;
 }
 
 .cabecalho img {
-    width: 30%; /* redimensionamento da largura */
-    max-width: 30%; /* evita que a imagem não ultrapasse 30% da tela */
-    display: block; /* define o elemento como bloco e ocupa toda a largura disponível */
+    width: 30%;
+    max-width: 30%;
+    display: block;
 }
 
 .cabecalho nav {
     display: flex;
-    justify-content: space-around; /* define espaço no início, espaço no fim e espaço entre os elementos */
+    justify-content: space-around;
     width: 60%;
     height: 100%;
     flex-wrap: wrap;
