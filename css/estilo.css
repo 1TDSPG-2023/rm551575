@@ -27,3 +27,31 @@ html {
 .conteudo div {
     font-size: 2rem;
 }
+
+.rodape {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    background-color: #d9d9d9;
+}
+
+.rodape img {
+    max-width: 10%;
+    display: block;
+    margin: 0 auto;
+}
+
+.rodape nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.rodape a {
+    padding: 5%;
+}
+
+.rodape a:hover {
+    background-color: #29252588;
+}
