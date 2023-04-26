@@ -55,3 +55,38 @@ html {
 .rodape a:hover {
     background-color: #29252588;
 }
+
+.dados {
+    margin: 5% auto;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+td,th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 5px;
+}
+
+tr:nth-child(odd) {
+    background-color: #dddddd;
+}
+
+/* td[rowspan] {
+    text-align: center;
+} */
+
+th {
+    text-align: center;
+}
+
+td:nth-child(even), th:nth-child(even) {
+    background-color: #d6eeee;
+}
+
+tr:hover {
+    background-color: #d6eeee;
+}
