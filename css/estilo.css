@@ -1,0 +1,92 @@
+@import url("./cabecalho.css");
+@import url("./conteudo.css");
+@import url("./break-point-1004px.css");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.rodape {
+    
+}
+
+html {
+    font-size: 62.7%;
+}
+
+.tit-sec {
+    font-size: 4rem;
+}
+
+.conteudo {
+    font-size: 2rem;
+}
+
+.conteudo div {
+    font-size: 2rem;
+}
+
+.rodape {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    background-color: #d9d9d9;
+}
+
+.rodape img {
+    max-width: 10%;
+    display: block;
+    margin: 0 auto;
+}
+
+.rodape nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.rodape a {
+    padding: 5%;
+}
+
+.rodape a:hover {
+    background-color: #29252588;
+}
+
+.dados {
+    margin: 5% auto;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+td,th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 5px;
+}
+
+tr:nth-child(odd) {
+    background-color: #dddddd;
+}
+
+/* td[rowspan] {
+    text-align: center;
+} */
+
+th {
+    text-align: center;
+}
+
+td:nth-child(even), th:nth-child(even) {
+    background-color: #d6eeee;
+}
+
+tr:hover {
+    background-color: #d6eeee;
+}
