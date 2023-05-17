@@ -1,30 +1,21 @@
-// GERANDO UM TOKEN COM Math.
-let tokenGerado = Math.random().toString(16).substring(2);
+// // LISTANDO OBJETOS
+// let listaUsuarios = [
 
+//     {
+//         nomeCompleto: "Andre",
+//         nomeUsuario: "andre",
+//         senhaUsuario: "123"
+//     },
+//     {
+//         nomeCompleto: "João",
+//         nomeUsuario: "joao",
+//         senhaUsuario: "123"
+//     }
 
-// DECLARANDO OBJETOS
-const usuario1 = {
-    nomeUsuario : "andre",
-    senhaUsuario : "123",
-    gravaDados : true,
-    token : tokenGerado
-}
+// ];
 
-// ALTERANDO VALOR DA VARIAVEL
-tokenGerado = Math.random().toString(16).substring(2);
-
-const usuario2 = {
-    nomeUsuario : "andre2",
-    senhaUsuario : "123",
-    gravaDados : true,
-    token : tokenGerado
-}
-
-
-// LISTANDO OBJETOS
-let listaUsuarios = [];
-listaUsuarios.push(usuario1);
-listaUsuarios.push(usuario2);
+// // GUARDAR A LISTA DE OBJETOS NO LOCAL-STORAGE
+// localStorage.setItem("listaUser", JSON.stringify(listaUsuarios));
 
 
 // evt é abreviação de event.
@@ -39,7 +30,12 @@ addEventListener("click", (evt) => {
     if (evt.target.id == "btnSubmit") {
 
         try {
-            listaUsuarios.forEach( (usuario) => {
+
+            // Recuperar a lista de usuários do localStorage
+
+            let listaUsuarios = JSON.parse(localStorage.getItem("listaUser"));
+
+            listaUsuarios.forEach((usuario) => {
             
                 if (inputUser.value == usuario.nomeUsuario && inputPass.value == usuario.senhaUsuario) {
                     throw"acesso liberado";
@@ -54,6 +50,10 @@ addEventListener("click", (evt) => {
             if (msg == "acesso liberado") {
                 msgError.setAttribute("style","color:#00ff00;");
                 msgError.innerHTML = "<span><strong>Login efeuado com sucesso.</strong></span>";
+                //Redirect
+                setTimeout(() => {
+                    window.location.href = "../pages/sucesso.html"
+                }, 2000);
             } else {
                 msgError.setAttribute("style","color:#ff0000;");
                 msgError.innerHTML = "<span><strong>Login ou senha inválidos.</strong></span>";
