@@ -1,0 +1,7 @@
+.fa-eye, .fa-eye-slash {
+    cursor: pointer;
+}
+
+div {
+    user-select: none;
+}

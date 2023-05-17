@@ -10,6 +10,7 @@ const usuario1 = {
     token : tokenGerado
 }
 
+// ALTERANDO VALOR DA VARIAVEL
 tokenGerado = Math.random().toString(16).substring(2);
 
 const usuario2 = {
@@ -18,6 +19,7 @@ const usuario2 = {
     gravaDados : true,
     token : tokenGerado
 }
+
 
 // LISTANDO OBJETOS
 let listaUsuarios = [];
@@ -31,11 +33,10 @@ listaUsuarios.push(usuario2);
 // O segundo if mostra no console se o acesso será liberado ou negado caso o usuário digite as credenciais corretas e clique no botão login.
 addEventListener("click", (evt) => {
 
+    const inputUser = document.querySelector("#idUser");
+    const inputPass = document.querySelector("#idPass");
+
     if (evt.target.id == "btnSubmit") {
-        const inputUser = document.querySelector("#idUser");
-        const inputPass = document.querySelector("#idPass");
-        // console.log(inputUser.value)
-        // console.log(inputPass.value)
 
         try {
             listaUsuarios.forEach( (usuario) => {
@@ -59,7 +60,14 @@ addEventListener("click", (evt) => {
             }
         }
 
+    } else if (evt.target.className == "fa fa-eye" || evt.target.className == "fa fa-eye-slash") {
+        if(inputPass.getAttribute("type") == "password") {
+            inputPass.setAttribute("type","text");
+            evt.target.setAttribute("class","fa fa-eye-slash");
+        } else if (evt.target.className == "fa fa-eye-slash") {
+            inputPass.setAttribute("type","password");
+            evt.target.setAttribute("class","fa fa-eye");
+        }
     }
-
 
 });
