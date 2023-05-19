@@ -2,16 +2,10 @@
 // let listaUsuarios = [
 
 //     {
-//         nomeCompleto: "Andre",
+//         nomeCompleto: "André Sant'Ana",
 //         nomeUsuario: "andre",
 //         senhaUsuario: "123"
-//     },
-//     {
-//         nomeCompleto: "João",
-//         nomeUsuario: "joao",
-//         senhaUsuario: "123"
 //     }
-
 // ];
 
 // // GUARDAR A LISTA DE OBJETOS NO LOCAL-STORAGE
@@ -27,6 +21,17 @@ addEventListener("click", (evt) => {
     const inputUser = document.querySelector("#idUser");
     const inputPass = document.querySelector("#idPass");
 
+    //CRIANDO OBJETO USER-LOGADO
+    const usuarioLogado = {
+        nomeUsuarioLogado: inputUser.value,
+        senhaUsuarioLogado: inputPass.value
+    }
+
+    //CRIANDO OBJETO USUÁRIO-VALIDADO
+    let usuarioValidado = {};
+
+
+
     if (evt.target.id == "btnSubmit") {
 
         try {
@@ -37,7 +42,8 @@ addEventListener("click", (evt) => {
 
             listaUsuarios.forEach((usuario) => {
             
-                if (inputUser.value == usuario.nomeUsuario && inputPass.value == usuario.senhaUsuario) {
+                if (usuarioLogado.nomeUsuarioLogado == usuario.nomeUsuario && usuarioLogado.senhaUsuarioLogado == usuario.senhaUsuario) {
+                    usuarioValidado = usuario;
                     throw"acesso liberado";
                 }
 
@@ -49,7 +55,17 @@ addEventListener("click", (evt) => {
             const msgError = document.querySelector("#msgError");
             if (msg == "acesso liberado") {
                 msgError.setAttribute("style","color:#00ff00;");
-                msgError.innerHTML = "<span><strong>Login efeuado com sucesso.</strong></span>";
+                msgError.innerHTML = `<span><strong>O usuário ${usuarioValidado.nomeCompleto} efetuou o login com sucesso.</strong></span>`;
+                
+                //ADICIONANDO O OBJETO USUÁRIO-VALIDADO AO LOCAL-STORAGE
+                localStorage.setItem("user-validado", JSON.stringify(usuarioValidado));
+
+                //CRIANDO O TOKEN DE AUTENTICAÇÃO
+                const token = Math.random().toString(16).substring(2) + Math.random().toString(16).substring(2);
+                
+                //ADICIONANDO O TOKEN AO LOCAL-STORAGE
+                localStorage.setItem("user-token", token);
+                
                 //Redirect
                 setTimeout(() => {
                     window.location.href = "../pages/sucesso.html"
